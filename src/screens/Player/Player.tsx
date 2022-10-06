@@ -42,7 +42,6 @@ const Player = () => {
   const onTogglePlayback = useOnTogglePlayback();
 
   const track = useCurrentTrack();
-  const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false);
 
   const repeat = useCallback(() => {
     setRepeatSong((repeatSong) => !repeatSong);
@@ -50,21 +49,6 @@ const Player = () => {
 
   const like = useCallback(() => {
     setLikeSong((likeSong) => !likeSong);
-  }, []);
-
-  useEffect(() => {
-    async function run() {
-      const isSetup = await SetupService();
-      setIsPlayerReady(isSetup);
-      console.log({ track });
-
-      const queue = await TrackPlayer.getQueue();
-      if (isSetup && queue.length <= 0) {
-        await QueueInitialTracksService();
-      }
-    }
-
-    run();
   }, []);
 
   return (

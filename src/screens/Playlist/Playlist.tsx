@@ -1,6 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { colors } from "../../util/colors";
+import FooterPlayer from "../../components/FooterPlayer";
 
 const Playlist = () => {
   return (
@@ -19,10 +20,12 @@ const Playlist = () => {
           width: "100%",
           flexDirection: "row",
           marginBottom: 10,
-          backgroundColor: colors.orange,
+          backgroundColor: colors.dark,
           borderRadius: 5,
         }}
-      ></View>
+      >
+        <FooterPlayer />
+      </View>
     </View>
   );
 };
