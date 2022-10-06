@@ -24,11 +24,6 @@ const FooterPlayer = () => {
     250
   );
 
-  const change = (value: number) => {
-    const time = value / 60;
-    const progress = time.toFixed(2);
-    setProgress(parseFloat(progress));
-  };
   return (
     <View
       style={{
@@ -92,6 +87,7 @@ const FooterPlayer = () => {
               style={{
                 flex: 1,
                 flexDirection: "row",
+                marginHorizontal: 5,
               }}
             >
               {isLoading ? (
@@ -116,7 +112,6 @@ const FooterPlayer = () => {
           thumbStyle={{ height: 40, width: 20, backgroundColor: "transparent" }}
           value={trackProgress.position}
           allowTouchTrack
-          onValueChange={change}
           minimumValue={0}
           onSlidingComplete={TrackPlayer.seekTo}
           animateTransitions
