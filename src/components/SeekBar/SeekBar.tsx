@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Slider } from "react-native-elements/dist/slider/Slider";
 import TrackPlayer, { useProgress } from "react-native-track-player";
+import sizes from "../../styles/sizes";
 
 const SeekBar: FC<{ live?: boolean }> = ({ live }) => {
   const [progress, setProgress] = useState<number>(0);
@@ -17,7 +18,9 @@ const SeekBar: FC<{ live?: boolean }> = ({ live }) => {
   };
 
   return live ? (
-    <View style={styles.liveContainer}>
+    <View
+      style={[styles.liveContainer, { height: 40, justifyContent: "center" }]}
+    >
       <Text style={styles.liveText}>Live Stream</Text>
     </View>
   ) : (
@@ -62,13 +65,14 @@ const styles = StyleSheet.create({
   liveText: {
     color: "white",
     alignSelf: "center",
-    fontSize: 18,
+    fontSize: 15,
   },
   container: {
     height: 40,
     width: 380,
     marginTop: 25,
     flexDirection: "row",
+    fontSize: 20,
   },
   labelContainer: {
     width: 370,
