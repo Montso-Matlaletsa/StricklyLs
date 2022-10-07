@@ -40,6 +40,7 @@ const FooterPlayer = () => {
           width: 50,
           height: 50,
           borderRadius: 5,
+          marginLeft: 5,
         }}
       />
       <View

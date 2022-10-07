@@ -1,22 +1,25 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import { colors } from "../../util/colors";
 import FooterPlayer from "../../components/FooterPlayer";
+import { SafeAreaView } from "react-native-safe-area-context";
+import Player from "../Player";
 
 const Playlist = () => {
   return (
-    <View
+    <SafeAreaView
       style={{
         height: "100%",
-        marginRight: 10,
-        marginLeft: 10,
+
+        backgroundColor: colors.dark,
       }}
     >
+      <ScrollView>{}</ScrollView>
       <View
         style={{
           height: 50,
           position: "absolute",
-          bottom: 0,
+          bottom: 85,
           width: "100%",
           flexDirection: "row",
           marginBottom: 10,
@@ -26,7 +29,7 @@ const Playlist = () => {
       >
         <FooterPlayer />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
