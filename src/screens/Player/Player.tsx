@@ -4,6 +4,7 @@ import {
   Image,
   Platform,
   Pressable,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -26,6 +27,9 @@ import { useDebouncedValue } from "../../hooks/useDebouncedValue";
 
 import { useCurrentTrack } from "../../hooks";
 import { QueueInitialTracksService, SetupService } from "../../Services";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "../../navigation/RootNav";
 
 const Player = () => {
   const [repeatSong, setRepeatSong] = useState<boolean>(false);
@@ -43,6 +47,8 @@ const Player = () => {
 
   const track = useCurrentTrack();
 
+  const { goBack } = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   const repeat = useCallback(() => {
     setRepeatSong((repeatSong) => !repeatSong);
   }, []);
@@ -52,7 +58,7 @@ const Player = () => {
   }, []);
 
   return (
-    <View style={{ height: "100%", backgroundColor: "#102e4a" }}>
+    <SafeAreaView style={{ height: "100%", backgroundColor: "#102e4a" }}>
       <View
         style={{
           height: 50,
@@ -62,7 +68,10 @@ const Player = () => {
           flexDirection: "row",
         }}
       >
-        <TouchableOpacity style={{ flex: 1, alignItems: "flex-start" }}>
+        <TouchableOpacity
+          style={{ flex: 1, alignItems: "flex-start" }}
+          onPress={goBack}
+        >
           <Icon name="down" size={20} color={"white"} />
         </TouchableOpacity>
 
@@ -142,7 +151,7 @@ const Player = () => {
           iconColor={muteSong ? "red" : "white"}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,5 +1,11 @@
-import { View, Text, Image, ActivityIndicator } from "react-native";
-import React, { useState } from "react";
+import {
+  View,
+  Text,
+  Image,
+  ActivityIndicator,
+  TouchableOpacity,
+} from "react-native";
+import React, { useCallback, useState } from "react";
 import Slider from "react-native-elements/dist/slider/Slider";
 import TrackPlayer, {
   State,
@@ -10,6 +16,10 @@ import TrackPlayer, {
 import ControlButton from "../ControlButton";
 import { useDebouncedValue } from "../../hooks/useDebouncedValue";
 import { useCurrentTrack, useOnTogglePlayback } from "../../hooks";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "../../navigation/RootNav";
+import { RootScreens } from "../../navigation/Routes";
 
 const FooterPlayer = () => {
   const trackProgress = useProgress();
@@ -24,6 +34,12 @@ const FooterPlayer = () => {
     250
   );
 
+  const { navigate } = useNavigation<StackNavigationProp<RootStackParamList>>();
+
+  const routeToPlayer = useCallback(
+    () => navigate(RootScreens.PLAYER),
+    [navigate]
+  );
   return (
     <View
       style={{
@@ -32,17 +48,20 @@ const FooterPlayer = () => {
         width: "100%",
       }}
     >
-      <Image
-        // @ts-ignore
-        source={{ uri: track?.artwork }}
-        resizeMode={"cover"}
-        style={{
-          width: 50,
-          height: 50,
-          borderRadius: 5,
-          marginLeft: 5,
-        }}
-      />
+      <TouchableOpacity onPress={routeToPlayer}>
+        <Image
+          // @ts-ignore
+          source={{ uri: track?.artwork }}
+          resizeMode={"cover"}
+          style={{
+            width: 50,
+            height: 50,
+            borderRadius: 5,
+            marginLeft: 5,
+          }}
+        />
+      </TouchableOpacity>
+
       <View
         style={{
           flex: 1,

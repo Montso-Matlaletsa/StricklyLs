@@ -10,7 +10,6 @@ const Home = () => {
         height: "100%",
       }}
     >
-      <TextV1>Hoi</TextV1>
       <Playlist />
     </View>
   );
