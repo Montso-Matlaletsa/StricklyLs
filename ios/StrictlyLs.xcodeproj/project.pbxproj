@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		5B71B36528E37AF100DCB1BF /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 5B71B36428E37AF100DCB1BF /* Fonts */; };
 		5B7AB51628E3769C0037130C /* serv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7AB51528E3769C0037130C /* serv.swift */; };
+		5B8EBE292A24D79800B8D5AF /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EBE282A24D79700B8D5AF /* AppCenter-Config.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		F4C53A57F20C5F62B08BD04A /* libPods-StrictlyLs-StrictlyLsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E77911DDC9000E767F1B28B0 /* libPods-StrictlyLs-StrictlyLsTests.a */; };
 		FAA7D227378ACCAA6EB3D55B /* libPods-StrictlyLs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010847FBCE6065383241DCF7 /* libPods-StrictlyLs.a */; };
@@ -43,6 +44,7 @@
 		5B71B36428E37AF100DCB1BF /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		5B7AB51428E3769B0037130C /* StrictlyLs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StrictlyLs-Bridging-Header.h"; sourceTree = "<group>"; };
 		5B7AB51528E3769C0037130C /* serv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serv.swift; sourceTree = "<group>"; };
+		5B8EBE282A24D79700B8D5AF /* AppCenter-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "StrictlyLs/AppCenter-Config.plist"; sourceTree = "<group>"; };
 		5D87058CD7BCB2CA77E38F9E /* Pods-StrictlyLs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrictlyLs.release.xcconfig"; path = "Target Support Files/Pods-StrictlyLs/Pods-StrictlyLs.release.xcconfig"; sourceTree = "<group>"; };
 		67E9A2E88092076D495D4B29 /* Pods-StrictlyLs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrictlyLs.debug.xcconfig"; path = "Target Support Files/Pods-StrictlyLs/Pods-StrictlyLs.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = StrictlyLs/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		13B07FAE1A68108700A75B9A /* StrictlyLs */ = {
 			isa = PBXGroup;
 			children = (
+				5B8EBE282A24D79700B8D5AF /* AppCenter-Config.plist */,
 				5B71B36428E37AF100DCB1BF /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B71B36528E37AF100DCB1BF /* Fonts in Resources */,
+				5B8EBE292A24D79800B8D5AF /* AppCenter-Config.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
